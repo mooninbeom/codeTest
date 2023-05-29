@@ -1,13 +1,9 @@
 import java.io.*;
-import java.lang.annotation.Target;
-import java.util.*;
 
 public class Main{
 
 
     static boolean[][] star;
-    static int blue;
-    static int white;
     static StringBuilder sb;
 
     public static void main(String[] args) throws IOException {
@@ -17,12 +13,8 @@ public class Main{
         int N = Integer.parseInt(br.readLine());
 
         sb = new StringBuilder();
-
-
         star = new boolean[N][N];
-        blue = 0;
-        white = 0;
-
+        
         for(int i=0; i<N; i++){
             char[] st = br.readLine().toCharArray();
             for(int j=0; j<N; j++){
@@ -34,20 +26,7 @@ public class Main{
         recurs(0,0,N);
 
         bw.write(sb.toString());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         bw.flush();
         bw.close();
     }
@@ -55,7 +34,6 @@ public class Main{
 
     public static void recurs(int x, int y, int N){
 
-//        System.out.println(String.format("x: %d, y:%d, size:%d",x,y,N));
         if(N==1){
             if(star[x][y]) sb.append('1');
             else sb.append('0');
@@ -71,8 +49,6 @@ public class Main{
                 if(star[i][j] != isReversed){
                     sb.append('(');
                     isRecurs = true;
-//                    System.out.print(String.format("here ----- i=%d, j=%d and ",i,j));
-//                    System.out.println(isReversed);
                     break L1;
                 }
             }
