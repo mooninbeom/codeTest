@@ -34,21 +34,7 @@ public class Main{
         recurs(0,0,N);
 
         bw.write(minus+"\n"+zero+"\n"+plus);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
         bw.flush();
         bw.close();
@@ -57,7 +43,6 @@ public class Main{
 
     public static void recurs(int x, int y, int N){
 
-//        System.out.println(String.format("x: %d, y:%d, size:%d",x,y,N));
         if(N==1){
             switch (arr[x][y]){
                 case -1 :{
@@ -96,12 +81,6 @@ public class Main{
                     recurs(x+i,y+j,size);
                 }
             }
-//            recurs(x,y,size);
-//            recurs(x,y+size, size);
-//            recurs(x,y+2*size,size);
-//            recurs(x+size,y,size);
-//            recurs(x+size,y+size,size);
-//            recurs(x+size,y+size,size);
             return;
         }
 
